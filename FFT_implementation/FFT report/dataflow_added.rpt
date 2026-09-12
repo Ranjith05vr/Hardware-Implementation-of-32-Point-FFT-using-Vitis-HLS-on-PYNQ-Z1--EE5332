@@ -1,0 +1,358 @@
+
+
+================================================================
+== Vitis HLS Report for 'FFT'
+================================================================
+* Date:           Sat May 31 21:21:08 2025
+
+* Version:        2021.1 (Build 3247384 on Thu Jun 10 19:36:07 MDT 2021)
+* Project:        report
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  7.300 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+----------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline |
+    |   min   |   max   |    min   |    max   | min | max |   Type   |
+    +---------+---------+----------+----------+-----+-----+----------+
+    |      294|      294|  2.940 us|  2.940 us|   75|   75|  dataflow|
+    +---------+---------+----------+----------+-----+-----+----------+
+
+    + Detail: 
+        * Instance: 
+        +---------------------------------+------------------------------+---------+---------+----------+----------+-----+-----+---------+
+        |                                 |                              |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+        |             Instance            |            Module            |   min   |   max   |    min   |    max   | min | max |   Type  |
+        +---------------------------------+------------------------------+---------+---------+----------+----------+-----+-----+---------+
+        |Loop_Input_loop_proc_U0          |Loop_Input_loop_proc          |       74|       74|  0.740 us|  0.740 us|   74|   74|       no|
+        |Loop_bitreversal_label1_proc_U0  |Loop_bitreversal_label1_proc  |       35|       35|  0.350 us|  0.350 us|   35|   35|       no|
+        |Loop_FFT_label1_proc_U0          |Loop_FFT_label1_proc          |       18|       18|  0.180 us|  0.180 us|   18|   18|       no|
+        |Loop_FFT_label1_proc7_U0         |Loop_FFT_label1_proc7         |       22|       22|  0.220 us|  0.220 us|   22|   22|       no|
+        |Loop_FFT_label1_proc8_U0         |Loop_FFT_label1_proc8         |       22|       22|  0.220 us|  0.220 us|   22|   22|       no|
+        |Loop_FFT_label1_proc9_U0         |Loop_FFT_label1_proc9         |       22|       22|  0.220 us|  0.220 us|   22|   22|       no|
+        |Loop_FFT_label1_proc10_U0        |Loop_FFT_label1_proc10        |       22|       22|  0.220 us|  0.220 us|   22|   22|       no|
+        |entry_proc_U0                    |entry_proc                    |        0|        0|      0 ns|      0 ns|    0|    0|       no|
+        |Loop_Output_loop_proc_U0         |Loop_Output_loop_proc         |       72|       72|  0.720 us|  0.720 us|   72|   72|       no|
+        +---------------------------------+------------------------------+---------+---------+----------+----------+-----+-----+---------+
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-----+--------+-------+-----+
+|       Name      | BRAM_18K| DSP |   FF   |  LUT  | URAM|
++-----------------+---------+-----+--------+-------+-----+
+|DSP              |        -|    -|       -|      -|    -|
+|Expression       |        -|    -|       0|     96|    -|
+|FIFO             |        -|    -|      99|     67|    -|
+|Instance         |        8|   16|    3068|   4424|    -|
+|Memory           |        2|    -|     768|    192|    0|
+|Multiplexer      |        -|    -|       -|    144|    -|
+|Register         |        -|    -|      16|      -|    -|
++-----------------+---------+-----+--------+-------+-----+
+|Total            |       10|   16|    3951|   4923|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Available        |      280|  220|  106400|  53200|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Utilization (%)  |        3|    7|       3|      9|    0|
++-----------------+---------+-----+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    +---------------------------------+------------------------------+---------+----+-----+-----+-----+
+    |             Instance            |            Module            | BRAM_18K| DSP|  FF | LUT | URAM|
+    +---------------------------------+------------------------------+---------+----+-----+-----+-----+
+    |Loop_FFT_label1_proc_U0          |Loop_FFT_label1_proc          |        0|   0|   48|  269|    0|
+    |Loop_FFT_label1_proc10_U0        |Loop_FFT_label1_proc10        |        0|   4|  226|  258|    0|
+    |Loop_FFT_label1_proc7_U0         |Loop_FFT_label1_proc7         |        0|   4|  302|  499|    0|
+    |Loop_FFT_label1_proc8_U0         |Loop_FFT_label1_proc8         |        0|   4|  302|  499|    0|
+    |Loop_FFT_label1_proc9_U0         |Loop_FFT_label1_proc9         |        0|   4|  302|  499|    0|
+    |Loop_Input_loop_proc_U0          |Loop_Input_loop_proc          |        0|   0|  508|  532|    0|
+    |Loop_Output_loop_proc_U0         |Loop_Output_loop_proc         |        0|   0|  184|  451|    0|
+    |Loop_bitreversal_label1_proc_U0  |Loop_bitreversal_label1_proc  |        0|   0|   26|   69|    0|
+    |control_s_axi_U                  |control_s_axi                 |        0|   0|  112|  168|    0|
+    |data_IN_m_axi_U                  |data_IN_m_axi                 |        4|   0|  512|  580|    0|
+    |data_OUT_m_axi_U                 |data_OUT_m_axi                |        4|   0|  512|  580|    0|
+    |entry_proc_U0                    |entry_proc                    |        0|   0|   34|   20|    0|
+    +---------------------------------+------------------------------+---------+----+-----+-----+-----+
+    |Total                            |                              |        8|  16| 3068| 4424|    0|
+    +---------------------------------+------------------------------+---------+----+-----+-----+-----+
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    +----------------------+--------------------+---------+----+----+-----+------+-----+------+-------------+
+    |        Memory        |       Module       | BRAM_18K| FF | LUT| URAM| Words| Bits| Banks| W*Bits*Banks|
+    +----------------------+--------------------+---------+----+----+-----+------+-----+------+-------------+
+    |data_OUT0_M_real_V_U  |data_OUT0_M_real_V  |        0|  64|  16|    0|    32|   16|     1|          512|
+    |data_OUT0_M_imag_V_U  |data_OUT0_M_real_V  |        0|  64|  16|    0|    32|   16|     1|          512|
+    |data_OUT1_M_imag_V_U  |data_OUT1_M_imag_V  |        0|  64|  16|    0|    32|   16|     1|          512|
+    |data_OUT1_M_real_V_U  |data_OUT1_M_imag_V  |        0|  64|  16|    0|    32|   16|     1|          512|
+    |data_OUT2_M_imag_V_U  |data_OUT1_M_imag_V  |        0|  64|  16|    0|    32|   16|     1|          512|
+    |data_OUT2_M_real_V_U  |data_OUT1_M_imag_V  |        0|  64|  16|    0|    32|   16|     1|          512|
+    |data_OUT3_M_imag_V_U  |data_OUT1_M_imag_V  |        0|  64|  16|    0|    32|   16|     1|          512|
+    |data_OUT3_M_real_V_U  |data_OUT1_M_imag_V  |        0|  64|  16|    0|    32|   16|     1|          512|
+    |data_OUT4_M_real_V_U  |data_OUT1_M_imag_V  |        0|  64|  16|    0|    32|   16|     1|          512|
+    |data_OUT4_M_imag_V_U  |data_OUT1_M_imag_V  |        0|  64|  16|    0|    32|   16|     1|          512|
+    |xin_M_imag_V_U        |xin_M_imag_V        |        1|   0|   0|    0|    32|   16|     1|          512|
+    |xin_M_real_V_U        |xin_M_imag_V        |        1|   0|   0|    0|    32|   16|     1|          512|
+    |xout_M_imag_V_U       |xout_M_imag_V       |        0|  64|  16|    0|    32|   16|     1|          512|
+    |xout_M_real_V_U       |xout_M_imag_V       |        0|  64|  16|    0|    32|   16|     1|          512|
+    +----------------------+--------------------+---------+----+----+-----+------+-----+------+-------------+
+    |Total                 |                    |        2| 768| 192|    0|   448|  224|    14|         7168|
+    +----------------------+--------------------+---------+----+----+-----+------+-----+------+-------------+
+
+    * FIFO: 
+    +-----------------------------+---------+----+----+-----+------+-----+---------+
+    |             Name            | BRAM_18K| FF | LUT| URAM| Depth| Bits| Size:D*B|
+    +-----------------------------+---------+----+----+-----+------+-----+---------+
+    |data_OUT_offset_c_channel_U  |        0|  99|   0|    -|     8|   32|      256|
+    +-----------------------------+---------+----+----+-----+------+-----+---------+
+    |Total                        |        0|  99|   0|    0|     8|   32|      256|
+    +-----------------------------+---------+----+----+-----+------+-----+---------+
+
+    * Expression: 
+    +---------------------------------------------+----------+----+---+----+------------+------------+
+    |                Variable Name                | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +---------------------------------------------+----------+----+---+----+------------+------------+
+    |Loop_FFT_label1_proc10_U0_ap_continue        |       and|   0|  0|   2|           1|           1|
+    |Loop_FFT_label1_proc10_U0_ap_start           |       and|   0|  0|   2|           1|           1|
+    |Loop_FFT_label1_proc7_U0_ap_continue         |       and|   0|  0|   2|           1|           1|
+    |Loop_FFT_label1_proc7_U0_ap_start            |       and|   0|  0|   2|           1|           1|
+    |Loop_FFT_label1_proc8_U0_ap_continue         |       and|   0|  0|   2|           1|           1|
+    |Loop_FFT_label1_proc8_U0_ap_start            |       and|   0|  0|   2|           1|           1|
+    |Loop_FFT_label1_proc9_U0_ap_continue         |       and|   0|  0|   2|           1|           1|
+    |Loop_FFT_label1_proc9_U0_ap_start            |       and|   0|  0|   2|           1|           1|
+    |Loop_FFT_label1_proc_U0_ap_continue          |       and|   0|  0|   2|           1|           1|
+    |Loop_FFT_label1_proc_U0_ap_start             |       and|   0|  0|   2|           1|           1|
+    |Loop_Input_loop_proc_U0_ap_continue          |       and|   0|  0|   2|           1|           1|
+    |Loop_Input_loop_proc_U0_ap_start             |       and|   0|  0|   2|           1|           1|
+    |Loop_Output_loop_proc_U0_ap_start            |       and|   0|  0|   2|           1|           1|
+    |Loop_bitreversal_label1_proc_U0_ap_continue  |       and|   0|  0|   2|           1|           1|
+    |Loop_bitreversal_label1_proc_U0_ap_start     |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_data_OUT0_M_imag_V           |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_data_OUT0_M_real_V           |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_data_OUT1_M_imag_V           |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_data_OUT1_M_real_V           |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_data_OUT2_M_imag_V           |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_data_OUT2_M_real_V           |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_data_OUT3_M_imag_V           |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_data_OUT3_M_real_V           |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_data_OUT4_M_imag_V           |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_data_OUT4_M_real_V           |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_xin_M_imag_V                 |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_xin_M_real_V                 |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_xout_M_imag_V                |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_xout_M_real_V                |       and|   0|  0|   2|           1|           1|
+    |ap_idle                                      |       and|   0|  0|   2|           1|           1|
+    |ap_sync_ready                                |       and|   0|  0|   2|           1|           1|
+    |entry_proc_U0_ap_start                       |       and|   0|  0|   2|           1|           1|
+    |ap_sync_Loop_Input_loop_proc_U0_ap_ready     |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_data_OUT0_M_imag_V     |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_data_OUT0_M_real_V     |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_data_OUT1_M_imag_V     |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_data_OUT1_M_real_V     |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_data_OUT2_M_imag_V     |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_data_OUT2_M_real_V     |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_data_OUT3_M_imag_V     |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_data_OUT3_M_real_V     |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_data_OUT4_M_imag_V     |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_data_OUT4_M_real_V     |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_xin_M_imag_V           |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_xin_M_real_V           |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_xout_M_imag_V          |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_xout_M_real_V          |        or|   0|  0|   2|           1|           1|
+    |ap_sync_entry_proc_U0_ap_ready               |        or|   0|  0|   2|           1|           1|
+    +---------------------------------------------+----------+----+---+----+------------+------------+
+    |Total                                        |          |   0|  0|  96|          48|          48|
+    +---------------------------------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +----------------------------------------------+----+-----------+-----+-----------+
+    |                     Name                     | LUT| Input Size| Bits| Total Bits|
+    +----------------------------------------------+----+-----------+-----+-----------+
+    |ap_sync_reg_Loop_Input_loop_proc_U0_ap_ready  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_data_OUT0_M_imag_V  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_data_OUT0_M_real_V  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_data_OUT1_M_imag_V  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_data_OUT1_M_real_V  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_data_OUT2_M_imag_V  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_data_OUT2_M_real_V  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_data_OUT3_M_imag_V  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_data_OUT3_M_real_V  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_data_OUT4_M_imag_V  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_data_OUT4_M_real_V  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_xin_M_imag_V        |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_xin_M_real_V        |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_xout_M_imag_V       |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_xout_M_real_V       |   9|          2|    1|          2|
+    |ap_sync_reg_entry_proc_U0_ap_ready            |   9|          2|    1|          2|
+    +----------------------------------------------+----+-----------+-----+-----------+
+    |Total                                         | 144|         32|   16|         32|
+    +----------------------------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +----------------------------------------------+---+----+-----+-----------+
+    |                     Name                     | FF| LUT| Bits| Const Bits|
+    +----------------------------------------------+---+----+-----+-----------+
+    |ap_sync_reg_Loop_Input_loop_proc_U0_ap_ready  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_data_OUT0_M_imag_V  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_data_OUT0_M_real_V  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_data_OUT1_M_imag_V  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_data_OUT1_M_real_V  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_data_OUT2_M_imag_V  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_data_OUT2_M_real_V  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_data_OUT3_M_imag_V  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_data_OUT3_M_real_V  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_data_OUT4_M_imag_V  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_data_OUT4_M_real_V  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_xin_M_imag_V        |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_xin_M_real_V        |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_xout_M_imag_V       |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_xout_M_real_V       |  1|   0|    1|          0|
+    |ap_sync_reg_entry_proc_U0_ap_ready            |  1|   0|    1|          0|
+    +----------------------------------------------+---+----+-----+-----------+
+    |Total                                         | 16|   0|   16|          0|
+    +----------------------------------------------+---+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-------------------------+-----+-----+------------+--------------+--------------+
+|        RTL Ports        | Dir | Bits|  Protocol  | Source Object|    C Type    |
++-------------------------+-----+-----+------------+--------------+--------------+
+|s_axi_control_AWVALID    |   in|    1|       s_axi|       control|        scalar|
+|s_axi_control_AWREADY    |  out|    1|       s_axi|       control|        scalar|
+|s_axi_control_AWADDR     |   in|    5|       s_axi|       control|        scalar|
+|s_axi_control_WVALID     |   in|    1|       s_axi|       control|        scalar|
+|s_axi_control_WREADY     |  out|    1|       s_axi|       control|        scalar|
+|s_axi_control_WDATA      |   in|   32|       s_axi|       control|        scalar|
+|s_axi_control_WSTRB      |   in|    4|       s_axi|       control|        scalar|
+|s_axi_control_ARVALID    |   in|    1|       s_axi|       control|        scalar|
+|s_axi_control_ARREADY    |  out|    1|       s_axi|       control|        scalar|
+|s_axi_control_ARADDR     |   in|    5|       s_axi|       control|        scalar|
+|s_axi_control_RVALID     |  out|    1|       s_axi|       control|        scalar|
+|s_axi_control_RREADY     |   in|    1|       s_axi|       control|        scalar|
+|s_axi_control_RDATA      |  out|   32|       s_axi|       control|        scalar|
+|s_axi_control_RRESP      |  out|    2|       s_axi|       control|        scalar|
+|s_axi_control_BVALID     |  out|    1|       s_axi|       control|        scalar|
+|s_axi_control_BREADY     |   in|    1|       s_axi|       control|        scalar|
+|s_axi_control_BRESP      |  out|    2|       s_axi|       control|        scalar|
+|ap_clk                   |   in|    1|  ap_ctrl_hs|           FFT|  return value|
+|ap_rst_n                 |   in|    1|  ap_ctrl_hs|           FFT|  return value|
+|interrupt                |  out|    1|  ap_ctrl_hs|           FFT|  return value|
+|m_axi_data_IN_AWVALID    |  out|    1|       m_axi|       data_IN|       pointer|
+|m_axi_data_IN_AWREADY    |   in|    1|       m_axi|       data_IN|       pointer|
+|m_axi_data_IN_AWADDR     |  out|   32|       m_axi|       data_IN|       pointer|
+|m_axi_data_IN_AWID       |  out|    1|       m_axi|       data_IN|       pointer|
+|m_axi_data_IN_AWLEN      |  out|    8|       m_axi|       data_IN|       pointer|
+|m_axi_data_IN_AWSIZE     |  out|    3|       m_axi|       data_IN|       pointer|
+|m_axi_data_IN_AWBURST    |  out|    2|       m_axi|       data_IN|       pointer|
+|m_axi_data_IN_AWLOCK     |  out|    2|       m_axi|       data_IN|       pointer|
+|m_axi_data_IN_AWCACHE    |  out|    4|       m_axi|       data_IN|       pointer|
+|m_axi_data_IN_AWPROT     |  out|    3|       m_axi|       data_IN|       pointer|
+|m_axi_data_IN_AWQOS      |  out|    4|       m_axi|       data_IN|       pointer|
+|m_axi_data_IN_AWREGION   |  out|    4|       m_axi|       data_IN|       pointer|
+|m_axi_data_IN_AWUSER     |  out|    1|       m_axi|       data_IN|       pointer|
+|m_axi_data_IN_WVALID     |  out|    1|       m_axi|       data_IN|       pointer|
+|m_axi_data_IN_WREADY     |   in|    1|       m_axi|       data_IN|       pointer|
+|m_axi_data_IN_WDATA      |  out|   32|       m_axi|       data_IN|       pointer|
+|m_axi_data_IN_WSTRB      |  out|    4|       m_axi|       data_IN|       pointer|
+|m_axi_data_IN_WLAST      |  out|    1|       m_axi|       data_IN|       pointer|
+|m_axi_data_IN_WID        |  out|    1|       m_axi|       data_IN|       pointer|
+|m_axi_data_IN_WUSER      |  out|    1|       m_axi|       data_IN|       pointer|
+|m_axi_data_IN_ARVALID    |  out|    1|       m_axi|       data_IN|       pointer|
+|m_axi_data_IN_ARREADY    |   in|    1|       m_axi|       data_IN|       pointer|
+|m_axi_data_IN_ARADDR     |  out|   32|       m_axi|       data_IN|       pointer|
+|m_axi_data_IN_ARID       |  out|    1|       m_axi|       data_IN|       pointer|
+|m_axi_data_IN_ARLEN      |  out|    8|       m_axi|       data_IN|       pointer|
+|m_axi_data_IN_ARSIZE     |  out|    3|       m_axi|       data_IN|       pointer|
+|m_axi_data_IN_ARBURST    |  out|    2|       m_axi|       data_IN|       pointer|
+|m_axi_data_IN_ARLOCK     |  out|    2|       m_axi|       data_IN|       pointer|
+|m_axi_data_IN_ARCACHE    |  out|    4|       m_axi|       data_IN|       pointer|
+|m_axi_data_IN_ARPROT     |  out|    3|       m_axi|       data_IN|       pointer|
+|m_axi_data_IN_ARQOS      |  out|    4|       m_axi|       data_IN|       pointer|
+|m_axi_data_IN_ARREGION   |  out|    4|       m_axi|       data_IN|       pointer|
+|m_axi_data_IN_ARUSER     |  out|    1|       m_axi|       data_IN|       pointer|
+|m_axi_data_IN_RVALID     |   in|    1|       m_axi|       data_IN|       pointer|
+|m_axi_data_IN_RREADY     |  out|    1|       m_axi|       data_IN|       pointer|
+|m_axi_data_IN_RDATA      |   in|   32|       m_axi|       data_IN|       pointer|
+|m_axi_data_IN_RLAST      |   in|    1|       m_axi|       data_IN|       pointer|
+|m_axi_data_IN_RID        |   in|    1|       m_axi|       data_IN|       pointer|
+|m_axi_data_IN_RUSER      |   in|    1|       m_axi|       data_IN|       pointer|
+|m_axi_data_IN_RRESP      |   in|    2|       m_axi|       data_IN|       pointer|
+|m_axi_data_IN_BVALID     |   in|    1|       m_axi|       data_IN|       pointer|
+|m_axi_data_IN_BREADY     |  out|    1|       m_axi|       data_IN|       pointer|
+|m_axi_data_IN_BRESP      |   in|    2|       m_axi|       data_IN|       pointer|
+|m_axi_data_IN_BID        |   in|    1|       m_axi|       data_IN|       pointer|
+|m_axi_data_IN_BUSER      |   in|    1|       m_axi|       data_IN|       pointer|
+|m_axi_data_OUT_AWVALID   |  out|    1|       m_axi|      data_OUT|       pointer|
+|m_axi_data_OUT_AWREADY   |   in|    1|       m_axi|      data_OUT|       pointer|
+|m_axi_data_OUT_AWADDR    |  out|   32|       m_axi|      data_OUT|       pointer|
+|m_axi_data_OUT_AWID      |  out|    1|       m_axi|      data_OUT|       pointer|
+|m_axi_data_OUT_AWLEN     |  out|    8|       m_axi|      data_OUT|       pointer|
+|m_axi_data_OUT_AWSIZE    |  out|    3|       m_axi|      data_OUT|       pointer|
+|m_axi_data_OUT_AWBURST   |  out|    2|       m_axi|      data_OUT|       pointer|
+|m_axi_data_OUT_AWLOCK    |  out|    2|       m_axi|      data_OUT|       pointer|
+|m_axi_data_OUT_AWCACHE   |  out|    4|       m_axi|      data_OUT|       pointer|
+|m_axi_data_OUT_AWPROT    |  out|    3|       m_axi|      data_OUT|       pointer|
+|m_axi_data_OUT_AWQOS     |  out|    4|       m_axi|      data_OUT|       pointer|
+|m_axi_data_OUT_AWREGION  |  out|    4|       m_axi|      data_OUT|       pointer|
+|m_axi_data_OUT_AWUSER    |  out|    1|       m_axi|      data_OUT|       pointer|
+|m_axi_data_OUT_WVALID    |  out|    1|       m_axi|      data_OUT|       pointer|
+|m_axi_data_OUT_WREADY    |   in|    1|       m_axi|      data_OUT|       pointer|
+|m_axi_data_OUT_WDATA     |  out|   32|       m_axi|      data_OUT|       pointer|
+|m_axi_data_OUT_WSTRB     |  out|    4|       m_axi|      data_OUT|       pointer|
+|m_axi_data_OUT_WLAST     |  out|    1|       m_axi|      data_OUT|       pointer|
+|m_axi_data_OUT_WID       |  out|    1|       m_axi|      data_OUT|       pointer|
+|m_axi_data_OUT_WUSER     |  out|    1|       m_axi|      data_OUT|       pointer|
+|m_axi_data_OUT_ARVALID   |  out|    1|       m_axi|      data_OUT|       pointer|
+|m_axi_data_OUT_ARREADY   |   in|    1|       m_axi|      data_OUT|       pointer|
+|m_axi_data_OUT_ARADDR    |  out|   32|       m_axi|      data_OUT|       pointer|
+|m_axi_data_OUT_ARID      |  out|    1|       m_axi|      data_OUT|       pointer|
+|m_axi_data_OUT_ARLEN     |  out|    8|       m_axi|      data_OUT|       pointer|
+|m_axi_data_OUT_ARSIZE    |  out|    3|       m_axi|      data_OUT|       pointer|
+|m_axi_data_OUT_ARBURST   |  out|    2|       m_axi|      data_OUT|       pointer|
+|m_axi_data_OUT_ARLOCK    |  out|    2|       m_axi|      data_OUT|       pointer|
+|m_axi_data_OUT_ARCACHE   |  out|    4|       m_axi|      data_OUT|       pointer|
+|m_axi_data_OUT_ARPROT    |  out|    3|       m_axi|      data_OUT|       pointer|
+|m_axi_data_OUT_ARQOS     |  out|    4|       m_axi|      data_OUT|       pointer|
+|m_axi_data_OUT_ARREGION  |  out|    4|       m_axi|      data_OUT|       pointer|
+|m_axi_data_OUT_ARUSER    |  out|    1|       m_axi|      data_OUT|       pointer|
+|m_axi_data_OUT_RVALID    |   in|    1|       m_axi|      data_OUT|       pointer|
+|m_axi_data_OUT_RREADY    |  out|    1|       m_axi|      data_OUT|       pointer|
+|m_axi_data_OUT_RDATA     |   in|   32|       m_axi|      data_OUT|       pointer|
+|m_axi_data_OUT_RLAST     |   in|    1|       m_axi|      data_OUT|       pointer|
+|m_axi_data_OUT_RID       |   in|    1|       m_axi|      data_OUT|       pointer|
+|m_axi_data_OUT_RUSER     |   in|    1|       m_axi|      data_OUT|       pointer|
+|m_axi_data_OUT_RRESP     |   in|    2|       m_axi|      data_OUT|       pointer|
+|m_axi_data_OUT_BVALID    |   in|    1|       m_axi|      data_OUT|       pointer|
+|m_axi_data_OUT_BREADY    |  out|    1|       m_axi|      data_OUT|       pointer|
+|m_axi_data_OUT_BRESP     |   in|    2|       m_axi|      data_OUT|       pointer|
+|m_axi_data_OUT_BID       |   in|    1|       m_axi|      data_OUT|       pointer|
+|m_axi_data_OUT_BUSER     |   in|    1|       m_axi|      data_OUT|       pointer|
++-------------------------+-----+-----+------------+--------------+--------------+
+

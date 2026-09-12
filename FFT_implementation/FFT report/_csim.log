@@ -1,0 +1,39 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch GCC as the compiler.
+   Compiling ../../../../../axi_fft_may31/fft_tb.cpp in debug mode
+   Compiling ../../../../../axi_fft_may31/fft.cpp in debug mode
+   Generating csim.exe
+Index 0 | Output: 0.847656 + j0.0585938 | Expected: 0.914063 + j0.109375
+Index 1 | Output: 3.15625 + j-11.207 | Expected: 3.20313 + j-11.1953
+Index 2 | Output: 12.5156 + j-0.542969 | Expected: 12.5391 + j-0.511719
+Index 3 | Output: 1.31641 + j-5.08984 | Expected: 1.36719 + j-5.04297
+Index 4 | Output: -3.05078 + j-2.63672 | Expected: -3.02734 + j-2.62109
+Index 5 | Output: 10.3203 + j-4.07422 | Expected: 10.3086 + j-4.02344
+Index 6 | Output: -1.08984 + j-7.69531 | Expected: -1.07813 + j-7.64063
+Index 7 | Output: 7.23828 + j12.332 | Expected: 7.22266 + j12.3242
+Index 8 | Output: 6.58984 + j-2.61328 | Expected: 6.58203 + j-2.61719
+Index 9 | Output: 3.15234 + j2.82422 | Expected: 3.14063 + j2.82813
+Index 10 | Output: 0.429688 + j-0.675781 | Expected: 0.410156 + j-0.6875
+Index 11 | Output: 12.6133 + j1.92188 | Expected: 12.582 + j1.96875
+Index 12 | Output: 0.101563 + j-4.23828 | Expected: 0.109375 + j-4.21875
+Index 13 | Output: 5.85156 + j1.27734 | Expected: 5.83984 + j1.26953
+Index 14 | Output: 10.1953 + j2.79297 | Expected: 10.1484 + j2.75391
+Index 15 | Output: -4.16797 + j-0.761719 | Expected: -4.125 + j-0.753906
+Index 16 | Output: 5.26172 + j-7.46484 | Expected: 5.25391 + j-7.44922
+Index 17 | Output: 4.25 + j1.23047 | Expected: 4.23047 + j1.22266
+Index 18 | Output: -1.60938 + j0.386719 | Expected: -1.64453 + j0.382813
+Index 19 | Output: -3.98047 + j-0.0742188 | Expected: -4 + j-0.0664063
+Index 20 | Output: -0.0117188 + j5.10547 | Expected: -0.0234375 + j5.09766
+Index 21 | Output: 1.55469 + j-3.17578 | Expected: 1.52344 + j-3.1875
+Index 22 | Output: -7.80078 + j-12.6094 | Expected: -7.74609 + j-12.5977
+Index 23 | Output: 0.722656 + j15.8711 | Expected: 0.695313 + j15.8086
+Index 24 | Output: -4.99609 + j-6.68359 | Expected: -4.99609 + j-6.6875
+Index 25 | Output: -3.27734 + j5.49609 | Expected: -3.29297 + j5.46484
+Index 26 | Output: -6.77344 + j10.1445 | Expected: -6.75781 + j10.1055
+Index 27 | Output: 4.41016 + j6.03906 | Expected: 4.38672 + j6.03516
+Index 28 | Output: 1.22656 + j2.41016 | Expected: 1.22266 + j2.38672
+Index 29 | Output: -3.72656 + j1.81641 | Expected: -3.69141 + j1.78125
+Index 30 | Output: 2.10156 + j-1.11328 | Expected: 2.08203 + j-1.125
+Index 31 | Output: 3.00391 + j13.6992 | Expected: 3.00781 + j13.6211
+INFO: [SIM 1] CSim done with 0 errors.
+INFO: [SIM 3] *************** CSIM finish ***************
